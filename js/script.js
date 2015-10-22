@@ -10,6 +10,7 @@
 
 var lottery = true;
 var lottoNum;
+var powBall;
 
 //Functions
 
@@ -33,15 +34,19 @@ function powLotteryNumGen(max , min){
         powLotto[i] = Math.random() * (max - min) + min;
         //Round up lotto numbers
         powLotto[i] = Math.round(powLotto[i]);
-            var powerball
-            for (var ind = 0; ind = 1 ;ind++){
-                powerball = Math.random() * (35 - 1) +1;
-                //Round up lotto numbers
-                powerball = Math.round();
-            }
-
     }
-    return powLotto
+    return powLotto;
+}
+
+function powerball (){
+    //Variable to contain powerball number
+    var powerball;
+
+    //Number generator for the powerball number, also rounds to a whole number.
+    powerball = Math.round(Math.random() * (35 - 1) + 1);
+
+    return powerball
+
 }
 //Inputs
 
@@ -49,13 +54,17 @@ lottery = confirm("For the Powerball number select \"OK\". For the Florida Lotte
 
 //Main Code
 
+//This will display powerball lottery numbers
 if (lottery === true){
-    lottoNum = powLotteryNumGen(59,1);
+    lottoNum = powLotteryNumGen(59,1);      //Calls the first 5 powerball numbers function
+    powBall = powerball();                  //Calls the powerball number
+    console.log("This weeks Powerball lottery numbers are " +lottoNum + " and the Powerball is " + powBall);
 
+    //This will display Florida lottery numbers.
 }else{
-    lottoNum = flLotteryNumGen(10,1);
+    lottoNum = flLotteryNumGen(10,1);                                   //Calls the florida lottery number function
+    console.log("This weeks Florida lottery numbers are " +lottoNum);   //Prints the nubers to the console.
 }
 
-//Outputs
 
-console.log(lottoNum);
+
