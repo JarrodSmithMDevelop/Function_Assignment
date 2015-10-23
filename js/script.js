@@ -20,7 +20,7 @@ function flLotteryNumGen(max , min){
 
     for (var i = 0; i < 7; i++ ) {
             //Generates the numbers for the Florida Lottery
-            flLotto[i] = Math.random(flLotto) * (max - min) + min;
+            flLotto[i] = Math.random(flLotto[i]) * (max - min) + min;
             //Round up lotto numbers
             flLotto[i] = Math.round(flLotto[i]);
 
@@ -32,7 +32,7 @@ function powLotteryNumGen(max , min){
     var powLotto = [];
     for (var i = 0; i < 5; i++ ) {
             //Generates random numbers for the powerball
-            powLotto[i] = Math.random() * (max - min) + min;
+            powLotto[i] = Math.random(powLotto[i]) * (max - min) + min;
             //Round up lotto numbers
             powLotto[i] = Math.round(powLotto[i]);
 
@@ -45,14 +45,14 @@ function powerball (){
     //Variable to contain powerball number
     var powerball;
     //Number generator for the powerball number, also rounds to a whole number.
-    powerball = Math.round(Math.random() * (35 - 1) + 1);
+    powerball = Math.round(Math.random(powerball) * (35 - 1) + 1);
     //Returns the powerball number
     return powerball
 
 }
 //Inputs
 
-lottery = confirm("For the Powerball number select \"OK\". For the Florida Lottery numbers select \"Cancel\"");
+lottery = confirm("For the Powerball numbers select \"OK\". For the Florida Lottery numbers select \"Cancel\"");
 
 //Main Code
 
