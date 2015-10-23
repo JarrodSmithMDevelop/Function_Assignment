@@ -8,20 +8,21 @@
 
 //Variables
 
-var lottery = true;
-var lottoNum;
-var powBall;
+var lottery = true;     //variable for prompt
+var lottoNum;           //variable to store return from function with arrays
+var powBall;            //variable to store the powerball number
 
 //Functions
 
 //Function for Florida Lottery
 function flLotteryNumGen(max , min){
     var flLotto = [];
-    for (var i = 0; i < 7; i++ ) {
 
-        Number(flLotto[i] = Math.random(flLotto) * (max - min) + min);
-        //Round up lotto numbers
-        flLotto[i] = Math.round(flLotto[i]);
+    for (var i = 0; i < 7; i++ ) {
+            //Generates the numbers for the Florida Lottery
+            flLotto[i] = Math.random(flLotto) * (max - min) + min;
+            //Round up lotto numbers
+            flLotto[i] = Math.round(flLotto[i]);
 
     }
     return flLotto
@@ -30,21 +31,22 @@ function flLotteryNumGen(max , min){
 function powLotteryNumGen(max , min){
     var powLotto = [];
     for (var i = 0; i < 5; i++ ) {
+            //Generates random numbers for the powerball
+            powLotto[i] = Math.random() * (max - min) + min;
+            //Round up lotto numbers
+            powLotto[i] = Math.round(powLotto[i]);
 
-        powLotto[i] = Math.random() * (max - min) + min;
-        //Round up lotto numbers
-        powLotto[i] = Math.round(powLotto[i]);
     }
+    //Returns array of numbers for the powerball lottery
     return powLotto;
 }
 
 function powerball (){
     //Variable to contain powerball number
     var powerball;
-
     //Number generator for the powerball number, also rounds to a whole number.
     powerball = Math.round(Math.random() * (35 - 1) + 1);
-
+    //Returns the powerball number
     return powerball
 
 }
@@ -62,7 +64,7 @@ if (lottery === true){
 
     //This will display Florida lottery numbers.
 }else{
-    lottoNum = flLotteryNumGen(10,1);                                   //Calls the florida lottery number function
+    lottoNum = flLotteryNumGen(53,1);                                   //Calls the florida lottery number function
     console.log("This weeks Florida lottery numbers are " +lottoNum);   //Prints the nubers to the console.
 }
 
